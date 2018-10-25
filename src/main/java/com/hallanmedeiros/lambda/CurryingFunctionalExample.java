@@ -22,4 +22,9 @@ public class CurryingFunctionalExample {
 		
 		return curriedAdd.apply(first).applyAsInt(second);
 	}
+	
+	public IntUnaryOperator simpleSumCurriedPartial( int first ) {
+		IntFunction<IntUnaryOperator> curriedAdd = a -> b -> a + b;
+		return curriedAdd.apply(first);
+	}
 }
